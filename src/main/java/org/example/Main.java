@@ -3,6 +3,11 @@ package org.example;
 public class Main {
     import java.util.Scanner;
 
+public static void main(String[] args) {
+        TicTacToe game = new TicTacToe();
+        game.start();
+    }
+
 public class TicTacToe {
     private Player player1;
     private Player player2;
