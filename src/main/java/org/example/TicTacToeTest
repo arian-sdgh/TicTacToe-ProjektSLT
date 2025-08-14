@@ -1,0 +1,29 @@
+import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.*;
+
+public class TicTacToeTest {
+
+    @Test
+    public void getMarker_shouldReturnCorrectMarker_Positive() {
+        Player player = new Player('X');
+        assertEquals('X', player.getMarker(), "Marker should be X");
+    }
+
+    @Test
+    public void getMarker_shouldNotReturnIncorrectMarker_Negative() {
+        Player player = new Player('O');
+        assertNotEquals('X', player.getMarker(), "Marker should not be X");
+    }
+
+    @Test
+    public void isCellEmpty_shouldReturnTrueForEmptyCell_Positive() {
+        Board board = new Board();
+        assertTrue(board.isCellEmpty(0, 0), "Empty cell should return true");
+    }
+
+    @Test
+    public void isCellEmpty_shouldReturnFalseForOccupiedCell_Negative() {
+        Board board = new Board();
+        board.place(0, 0, 'X');
+        assertFalse(board.isCellEmpty(0, 0), "Occupied cell should return false");
+    }
