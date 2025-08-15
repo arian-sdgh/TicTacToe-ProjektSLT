@@ -27,3 +27,19 @@ public class TicTacToeTest {
         board.place(0, 0, 'X');
         assertFalse(board.isCellEmpty(0, 0), "Occupied cell should return false");
     }
+
+@Test
+    public void place_shouldPutMarkerInCorrectPosition_Positive() {
+        Board board = new Board();
+        board.place(0, 0, 'X');
+        assertEquals('X', board.getCells()[0][0], "Cell should contain X");
+    }
+
+    @Test
+    public void place_shouldNotPutWrongMarker_Negative() {
+        Board board = new Board();
+        board.place(1, 1, 'O');
+        assertNotEquals('X', board.getCells()[1][1], "Cell should not contain X");
+    }
+
+}
